@@ -1,0 +1,28 @@
+/*
+font-family: "Open Sans", sans-serif;
+font-family: "Noto Sans KR", sans-serif;
+*/
+
+
+:root{
+    --cw:1920px;
+    --sw:1324px;
+    --lh:24px;
+    --bc:#ffffff;
+    --mc:#F26A4B;
+    --sc:#F7A693;
+    --tc:#333333;
+    --hc:#999999;
+}
+
+.section{
+    width: var(--sw);
+    margin: 0 auto;
+}
+
+
+body{
+    font-family: "Open Sans", sans-serif , "Noto Sans KR", sans-serif; ;
+    line-height: var(--lh);
+    color: var(--tc);
+}
