@@ -5,8 +5,7 @@ font-family: "Noto Sans KR", sans-serif;
 
 
 :root{
-    --cw:1920px;
-    --sw:1324px;
+    --sw:1320px;
     --lh:24px;
     --bc:#ffffff;
     --mc:#F26A4B;
