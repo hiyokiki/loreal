@@ -12,6 +12,9 @@ font-family: "Noto Sans KR", sans-serif;
     --sc:#F7A693;
     --tc:#333333;
     --hc:#999999;
+    --font-w-l:300;
+    --font-w-r:400;
+    --font-w-m:500;
 }
 
 .section{
@@ -24,4 +27,34 @@ body{
     font-family: "Open Sans", sans-serif;
     line-height: var(--lh);
     color: var(--tc);
+    background-color: var(--bc);
+}
+.section-tt{
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: var(--font-w-r);
+    line-height: 52px;
+    font-size: 48px;
+}
+.section-desc{
+    font-size: 16px;
+    line-height: 26px;
+    font-weight: var(--font-w-l);
+}
+.btn{
+    width: 16px;
+    height: 60px;
+    border-radius: 50px;
+    border: 1px solid var(--tc);
+    background-color: transparent;
+    box-sizing: border-box;
+}
+.btn:hover {
+    border-color: var(--mc);
+    color: var(--mc);      
+}
+a{
+    text-decoration: none; 
+  }
+a:hover{
+    color: var(--mc);
 }
