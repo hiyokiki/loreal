@@ -171,3 +171,51 @@ header .user_utils a svg {
 .careers button:hover{
     color: var(--mc);
 }
+
+
+/* recruitment */
+
+.recruitment{
+    position: relative;
+    height: 312px;
+}
+.recruitment .content{
+    width: 405px;
+    height: 280px;
+    position: absolute;
+    top:0;
+    left:458px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.recruitment_tt{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 32px;
+    line-height: 40px;
+    font-weight: var(--font-w-l);
+    
+}
+.recruitment_desc{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    line-height: var(--lh);
+    font-weight: var(--font-w-l);
+}
+.recruitment .content a{
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: 52px;;
+    font-size: 16px;
+    font-weight: var(--font-w-r);
+    border: 1px solid ;
+    box-sizing: border-box;
+    padding: 16px 50px;
+    border-radius: 50px;
+    transition: .3s;
+}
+.recruitment .content a:hover{
+    color: var(--mc);
+}
