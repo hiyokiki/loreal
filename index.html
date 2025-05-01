@@ -11,6 +11,7 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=arrow_ios" />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/main.css">
 </head>
@@ -244,28 +245,34 @@
         <p class="section_desc">Faces of L'Oréal</p>
       </div>
       <!-- 썸네일을 클릭하면 변경되어 할 부분으로 3개 컨텐츠가 모여 있어야 함. -->
+      <div class="story_wrapper">
       <div class="stories">
         <div id="story1" class="active"> <!-- 이미지는 배경으로 처리-->
-          <h3>물류센터 현장 아르바이트로 시작해 로레알 물류 주문처리 시스템을 맡기까지</h3>
-          <p> 사람과 세상을 연결합니다. 지금, 당신의 여정을 시작해보세요.</p>
+          <h3 class="careers_tt">물류센터 현장 아르바이트로 시작해 로레알 물류 주문처리 시스템을 맡기까지</h3>
+          <p class="carrers_desc"> 사람과 세상을 연결합니다. 지금, 당신의 여정을 시작해보세요.</p>
           <button class="play" data-url="media/carrers_left.mp4">play</button> <!-- data-url에는 클릭하면 재생될 영상의 주소 -->
         </div>
         <div id="story2"> <!-- 이미지는 배경으로 처리-->
-          <h3>메디컬 기반의 혁신적인 제품을 소개하는 라로슈포제 세일즈 팀 리더의 커리어 여정</h3>
-          <p> 사람과 세상을 연결합니다. 지금, 당신의 여정을 시작해보세요.</p>
+          <h3 class="careers_tt">메디컬 기반의 혁신적인 제품을 소개하는 라로슈포제 세일즈 팀 리더의 커리어 여정</h3>
+          <p class="carrers_desc"> 사람과 세상을 연결합니다. 지금, 당신의 여정을 시작해보세요.</p>
           <button class="play" data-url="media/carrers_middle.mp4">play</button> <!-- data-url에는 클릭하면 재생될 영상의 주소 -->
         </div>
         <div id="story3"> <!-- 이미지는 배경으로 처리-->
-          <h3>로레알코리아 시니어 HR 애널리스트가 전하는 나의 커리어 이야기</h3>
-          <p> 사람과 세상을 연결합니다. 지금, 당신의 여정을 시작해보세요.</p>
+          <h3 class="careers_tt">로레알코리아 시니어 HR 애널리스트가 전하는 나의 커리어 이야기</h3>
+          <p class="carrers_desc"> 사람과 세상을 연결합니다. 지금, 당신의 여정을 시작해보세요.</p>
           <button class="play" data-url="media/carrers_right.mp4">play</button> <!-- data-url에는 클릭하면 재생될 영상의 주소 -->
         </div>
         </div>
-        <div class="controls">    
-          <button class="left button">아이콘으로 변경</button>
-          <button class="right button">아이콘으로 변경</button>
+        <div class="controls flex">    
+          <button class="left button"><span class="material-symbols-outlined">
+            arrow_back_ios
+            </span></button>
+          <button class="right button"><span class="material-symbols-outlined">
+            arrow_forward_ios
+            </span></button>
         </div>
       </div>
+  
       <ul class="story_thumbs">
         <li><a href="#story1"><img src="images/carrer_small_left.png" alt="썸네일"></a></li>
         <li><a href="#story2"></a><img src="images/carrer_small_middle.png" alt="썸네일"></a></li>
