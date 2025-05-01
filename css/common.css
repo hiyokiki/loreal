@@ -21,7 +21,10 @@ font-family: "Noto Sans KR", sans-serif;
     width: var(--cw);
     margin: 0 auto;
 }
-
+.flex{
+    display: flex;
+    flex-flow: row nowrap;
+}
 
 body{
     font-family: "Open Sans", sans-serif;
@@ -39,22 +42,4 @@ body{
     line-height: 26px;
     font-weight: var(--font-w-l);
 }
-.btn{
-    width: 16px;
-    height: 60px;
-    border-radius: 50px;
-    border: 1px solid var(--tc);
-    background-color: transparent;
-    box-sizing: border-box;
-}
-.btn:hover {
-    border-color: var(--mc);
-    color: var(--mc);      
-}
-a{
-    text-decoration: none; 
-    color:inherit;
-  }
-a:hover{
-    color: var(--mc);
-}
+
