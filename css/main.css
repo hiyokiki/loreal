@@ -128,11 +128,46 @@ header .user_utils a svg {
 .careers .active {
     display: block;
     height: 900px;
-    width: 100%;
+    width: 1920px;
 }
 #story1{
     background: url(../images/carrer_modalleft.PNG)no-repeat;
 }
 #story2{
     background: url(../images/carrer_modalmiddle.PNG)no-repeat;
+}
+
+#story3{
+    background: url(../images/carrer_modalright.PNG)no-repeat;
+}
+
+.careers_tt{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 32px;
+    font-weight: var(--font-w-r);
+    line-height: normal;
+    color: #FFFFFF;
+}
+
+.carrers_desc{
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    font-weight: var(--font-w-l);
+    color: #FFFFFF;
+}
+.careers .story_wrapper{
+    position: relative;
+}
+.careers .controls{
+    width: 25px;
+    height: 50px;
+    color: #FFFFFF;
+    position: absolute;
+    top: 50%;
+    gap:1270px;
+    margin-left:300px;
+}
+
+.careers button:hover{
+    color: var(--mc);
 }
