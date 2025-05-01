@@ -31,13 +31,13 @@ body{
     line-height: var(--lh);
     color: var(--tc);
 }
-.section-tt{
+.section_tt{
     font-family: "Noto Sans KR", sans-serif;
     font-weight: var(--font-w-r);
     line-height: 52px;
     font-size: 48px;
 }
-.section-desc{
+.section_desc{
     font-size: 16px;
     line-height: 26px;
     font-weight: var(--font-w-l);
