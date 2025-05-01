@@ -1,2 +1,39 @@
 @import url('reset.css');
 @import url('common.css');
+
+
+
+
+
+
+/* jinuk */
+
+/* news */
+.news {
+    position:relative
+}
+.news ul {
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 26px;
+}
+
+.news ul li {
+    line-height: 26px;
+    font-size:20px;
+    font-weight: var(--font-w-l);
+    font-family: "Noto Sans KR", sans-serif;
+    width: 427px;
+    height: 390px;
+}
+
+.news .more_link{
+    position:absolute;
+    right:0;
+    top:52px;
+    font-weight: var(--font-w-l);
+    line-height: 26px;
+}
+

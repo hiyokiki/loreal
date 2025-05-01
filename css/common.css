@@ -5,7 +5,7 @@ font-family: "Noto Sans KR", sans-serif;
 
 
 :root{
-    --sw:1320px;
+    --cw:1320px;
     --lh:24px;
     --bc:#ffffff;
     --mc:#F26A4B;
@@ -17,8 +17,8 @@ font-family: "Noto Sans KR", sans-serif;
     --font-w-m:500;
 }
 
-.section{
-    width: var(--sw);
+.container{
+    width: var(--cw);
     margin: 0 auto;
 }
 
@@ -27,7 +27,6 @@ body{
     font-family: "Open Sans", sans-serif;
     line-height: var(--lh);
     color: var(--tc);
-    background-color: var(--bc);
 }
 .section-tt{
     font-family: "Noto Sans KR", sans-serif;
@@ -54,6 +53,7 @@ body{
 }
 a{
     text-decoration: none; 
+    color:inherit;
   }
 a:hover{
     color: var(--mc);
