@@ -34,8 +34,12 @@
     top:52px;
     font-weight: var(--font-w-l);
     line-height: 26px;
+    transition:.3s;
 }
 .news .more_link:hover{
     color:var(--mc);
 }
+/* //news */
+
+/* careers */
 
