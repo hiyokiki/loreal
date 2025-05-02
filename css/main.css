@@ -130,21 +130,24 @@ header .user_utils a svg {
 }
 .stories > div {
     display: none;
+    background-repeat:no-repeat ;
+    background-position: 50% 0;
+    background-size:cover;
+    
 }
-.story_wrapper  .active{
+.story_wrapper .active{
     display: block;
     height: 900px;
-   
 }
 #story1{
-    background: url(../images/carrer_modalleft.PNG) no-repeat;
+    background-image: url(../images/carrer_modalleft.png) ;
 }
 #story2{
-    background: url(../images/carrer_modalmiddle.PNG) no-repeat;
+    background-image: url(../images/carrer_modalmiddle.png) ;
 }
 
 #story3{
-    background: url(../images/carrer_modalright.PNG) no-repeat;
+    background-image: url(../images/carrer_modalright.png) ;
 }
 
 .carrersnav{
@@ -202,7 +205,24 @@ header .user_utils a svg {
 .careers .controls .right{
     margin-left: 635px;
 }
-
+.story_thumbs{
+    margin-top: -119px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px   ;
+    position: relative;
+}
+.story_thumbs li{
+    overflow:hidden;
+    border-radius: 30px;
+    box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.25);
+}
+.story_thumbs a{
+    display: block;
+}
+.story_thumbs img{
+    width: 100%;
+}
 
 
 /* recruitment */
