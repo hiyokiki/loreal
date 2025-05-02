@@ -122,14 +122,19 @@ header .user_utils a svg {
 /* //news */
 
 /* careers */
-.careers > .stories {
+.careers{
+    margin-top: 69px;
+}
+.careers > div p{
+    margin-bottom: 27px;
+}
+.stories > div {
     display: none;
 }
-.careers .active {
+.story_wrapper  .active{
     display: block;
     height: 900px;
-    width: 1920px;
-    width: 1920px;
+   
 }
 #story1{
     background: url(../images/carrer_modalleft.PNG)no-repeat;
@@ -142,11 +147,26 @@ header .user_utils a svg {
     background: url(../images/carrer_modalright.PNG)no-repeat;
 }
 
+.carrersnav{
+    margin-left: 412px;
+    padding-top:51px;
+}
+.carrersnav .play{
+    width: 160px;
+    height: 60px;
+    border:1px solid #FFFFFF;
+    border-radius: 50px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 20px;
+
+}
 .careers_tt{
+    width: 700px;
     font-family: "Noto Sans KR", sans-serif;
     font-size: 32px;
     font-weight: var(--font-w-r);
-    line-height: normal;
+    line-height: 39px;
     color: #FFFFFF;
 }
 
@@ -155,6 +175,7 @@ header .user_utils a svg {
     font-size: 16px;
     font-weight: var(--font-w-l);
     color: #FFFFFF;
+    line-height: var(--lh);
 }
 .careers .story_wrapper{
     position: relative;
