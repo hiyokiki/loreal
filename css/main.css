@@ -277,3 +277,32 @@ header .user_utils a svg {
     color: var(--mc);
   }
   
+  /*  //recruitment */
+
+  /* top 버튼 */
+  .top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+  }
+  
+  .top button {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border: 1px solid var(--hc);
+    border-radius: 8px;
+    font-size: 18px;
+    transition:  0.3s;
+  }
+  .top button:hover {
+    background-color: var(--mc);  
+    color: var(--bc);
+    border-color: var(--mc);
+  }
+  /* //top */
+
+  /* fotter */
+  footer {
+    
+  }
