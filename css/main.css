@@ -303,6 +303,47 @@ header .user_utils a svg {
   /* //top */
 
   /* fotter */
-  footer {
-    
+  footer{
+    position: relative;
+    height: 130px;
+    display: flex;
+    align-items: center;
   }
+
+  footer .footer_section{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  footer ul{
+    font-family: "Noto Sans KR", sans-serif;
+    margin-top: var(--lh);
+    gap:16px;
+    font-weight: bold;
+    line-height: var(--lh);
+    font-size: 14px;
+  }
+  footer p {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 14px;
+    font-weight: var(--font-w-l);
+    color: var(--hc);
+    line-height: var(--lh);
+  }
+
+  footer .brandslogo{
+    display: flex;
+    gap: 16px;
+  }
+  
+footer .brand_hover{
+    display: none;
+}
+
+.brandslogo img{
+    width: 32px;
+    height: 32px;
+}
+
