@@ -18,7 +18,6 @@ const stories = [
 
 const leftBtn = document.querySelector('.left');
 const rightBtn = document.querySelector('.right');
-const thumbs = document.querySelectorAll('.story_thumbs a');
 
 let currentIndex = 1; 
 
@@ -38,11 +37,36 @@ leftBtn.addEventListener('click', function () {
   active(prevIndex);
 });
 
+const slideWrapper=document.querySelector('.story_wrapper');
+const thumbs = document.querySelector('.story_thumbs');
+const slides=thumbs.querySelectorAll('li');
+const slideWidth=313;
+const slideGap=20;
+
+let thumbsIndex = 0 ; 
+
+function moveSlide(idx){
+  if(idx > slides.length - 3 ){
+    idx = 0 ;
+  }
+  if(idx <0 ){
+     idx = slides.length  - 3 ;
+  }
+  thumbs.style.left = -(idx * (slideWidth + slideGap)) + 'px';
+  currentIndex=idx;
+  console.log(thumbsIndex);
+}
+
+rightBtn.addEventListener('click',()=>{
+  moveSlide(++thumbsIndex);
+});
+
+leftBtn.addEventListener('click',()=>{
+  moveSlide(--thumbsIndex);
+});
 
 
 
-
-  
 
 
 
