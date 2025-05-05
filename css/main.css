@@ -2,7 +2,7 @@
 @import url('common.css');
 /* youngtae */
 
-
+/* header */
 header {
     width: 100%;
     position: fixed;
@@ -28,13 +28,21 @@ header .choose_lang li {}
 header .choose_lang li a {}
 
 header .logo {
+    width: 204px;
+    height: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-header .logo a {}
+header .logo a {
+    display: block;
+    line-height: 40px;
+    background: url(../images/header_logo.png) no-repeat;
+    text-indent: -9999px;
+    overflow: hidden;
+}
 
 header .user_utils {
     align-items: center;
@@ -47,12 +55,31 @@ header .user_utils a svg {
     margin-left: 5px;
 }
 
+header nav {
+    height: calc(var(--lh) * 2);
+    justify-content: center;
+    align-items: center;
+}
+
+header .gnb {
+    gap: 60px;
+}
+
+/* 임시 클래스 */
+.sub_menu {
+    display: none;
+}
+
+/* //header */
+
+/*  video banner */
 .video_banner {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     position: relative;
     overflow: hidden;
     z-index: 100;
+    margin-bottom: calc(var(--lh) * 5);
     /*header의 영역보다 아래에 위치하게*/
 }
 
@@ -62,23 +89,128 @@ header .user_utils a svg {
     object-fit: cover;
 }
 
-/* 임시 클래스 */
+/* // video banner */
 
-.sub_menu {
+
+
+/* brand */
+section.brand {
+    margin-bottom: calc(var(--lh) * 5);
+}
+
+.brand .title {
+    margin-bottom: var(--lh);
+    position: relative;
+}
+
+.title .tap_menu {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+
+.title .tap_menu li:first-child {
+    position: relative;
+}
+
+.title .tap_menu li:first-child::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 2px;
+    left: calc(100% + 10px);
+    width: 2px;
+    height: 20px;
+    background-color: #999999;
+}
+
+.title .tap_menu li {}
+
+.title .tap_menu li a {}
+
+.brand_item_wrap {
+    gap: 20px;
+}
+
+.brand_item_wrap li.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    width: 315px;
+    height: 442px;
+}
+
+li.item .item_img {}
+
+li.item .item_img :last-child {
     display: none;
 }
 
+li.item .hover_info {
+    display: none;
+}
 
+/* //brand */
 
+/* ESG  */
+section.ESG {
+    margin-bottom: calc(var(--lh) * 5);
+}
 
+.ESG .slide_show {
+    position: relative;
+    outline: 1px solid red;
+    height: 598px;
+    overflow: hidden;
+    /*슬라이드 목록 안보이게*/
+}
 
+.ESG .slide_show .slide_container {
+    display: flex;
+    width: 300%;
+    /* 추후 스크립트 제어 */
+}
 
+.slide_container .slide {
+    width: 100%;
+    height: 598px;
 
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
 
+.slide_container .slide:nth-child(1) {
+    background: url(../images/esg_banner_img01.jpg) no-repeat center center;
+    background-size: cover;
+}
 
+.slide_container .slide:nth-child(2) {
+    background: url(../images/esg_banner_img02.jpg) no-repeat center center;
+    background-size: cover;
+}
 
+.slide_container .slide:nth-child(3) {
+    background: url(../images/esg_banner_img03.jpg) no-repeat center center;
+    background-size: cover;
+}
 
+.slide_show .prev {
+    position: absolute;
+    top: 50%;
+    right: 300px;
+    transform: translateY(-50%);
+}
 
+.slide_show .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
 /* //youngtae */
 
@@ -122,53 +254,61 @@ header .user_utils a svg {
 /* //news */
 
 /* careers */
-.careers{
+.careers {
     margin-top: 130px;
 }
-.careers > div p{
+
+.careers>div p {
     margin-bottom: 27px;
 }
-.stories > div {
+
+.stories>div {
     display: none;
-    background-repeat:no-repeat ;
+    background-repeat: no-repeat;
     background-position: 50% 0;
-    background-size:cover;
-    
+    background-size: cover;
+
 }
-.story_wrapper .active{
+
+.story_wrapper .active {
     display: block;
     height: 900px;
 }
-#story1{
-    background-image: url(../images/carrer_modalleft.png) ;
-}
-#story2{
-    background-image: url(../images/carrer_modalmiddle.png) ;
+
+#story1 {
+    background-image: url(../images/carrer_modalleft.png);
 }
 
-#story3{
-    background-image: url(../images/carrer_modalright.png) ;
+#story2 {
+    background-image: url(../images/carrer_modalmiddle.png);
 }
 
-.carrersnav{
+#story3 {
+    background-image: url(../images/carrer_modalright.png);
+}
+
+.carrersnav {
     margin-left: 412px;
-    padding-top:51px;
+    padding-top: 51px;
 }
-.carrersnav .play{
+
+.carrersnav .play {
     width: 160px;
     height: 60px;
-    border:1px solid #FFFFFF;
+    border: 1px solid #FFFFFF;
     border-radius: 50px;
     box-sizing: border-box;
     color: #FFFFFF;
     font-size: 20px;
-    transition:.3s;
+    transition: .3s;
 }
-.careers .play:hover{
+
+.careers .play:hover {
     color: var(--mc);
     border-color: var(--mc);
 }
-.careers_tt{
+
+.careers_tt {
     width: 700px;
     font-family: "Noto Sans KR", sans-serif;
     font-size: 32px;
@@ -177,17 +317,19 @@ header .user_utils a svg {
     color: #FFFFFF;
 }
 
-.carrers_desc{
+.carrers_desc {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
     font-weight: var(--font-w-l);
     color: #FFFFFF;
     line-height: var(--lh);
 }
-.careers .story_wrapper{
+
+.careers .story_wrapper {
     position: relative;
 }
-.careers .controls button{
+
+.careers .controls button {
     font-size: 27px;
     top: 50%;
     transform: translateY(-50%);
@@ -196,39 +338,49 @@ header .user_utils a svg {
     position: absolute;
     transition: .3s;
 }
-.careers .controls button:hover{
+
+.careers .controls button:hover {
     color: var(--mc);
 }
-.careers .controls .left{
-    margin-left:-635px;
+
+.careers .controls .left {
+    margin-left: -635px;
 }
-.careers .controls .right{
+
+.careers .controls .right {
     margin-left: 635px;
 }
-.story_thumbs{
+
+.story_thumbs {
     margin-top: -119px;
     justify-content: center;
     align-items: center;
-    gap: 20px   ;
+    gap: 20px;
     position: relative;
 }
-.story_thumbs li{
-    overflow:hidden;
+
+.story_thumbs li {
+    overflow: hidden;
     border-radius: 30px;
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.25);
 }
-.story_thumbs a{
+
+.story_thumbs a {
     display: block;
 }
-.story_thumbs img{
+
+.story_thumbs img {
     width: 100%;
 }
-#videomodal{
+
+#videomodal {
     display: none;
 }
-#videomodal.active{
+
+#videomodal.active {
     display: block;
 }
+
 /* recruitment */
 
 .recruitment {
@@ -237,34 +389,35 @@ header .user_utils a svg {
     height: 312px;
     position: relative;
     margin-top: 52px;
-    background-image:url(../images/recruitment.png);
+    background-image: url(../images/recruitment.png);
     background-size: cover;
     background-repeat: no-repeat;
-  }
-  .recruitment .content {
+}
+
+.recruitment .content {
     flex-direction: column;
     align-items: center;
     text-align: center;
     background-image: none;
     margin-top: 0;
-  }
-  
-  
-  .recruitment_tt {
+}
+
+
+.recruitment_tt {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 32px;
     line-height: 40px;
     font-weight: var(--font-w-l);
-  }
-  
-  .recruitment_desc {
+}
+
+.recruitment_desc {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 16px;
     line-height: var(--lh);
     font-weight: var(--font-w-l);
-  }
-  
-  .recruitment .content a {
+}
+
+.recruitment .content a {
     font-family: "Noto Sans KR", sans-serif;
     margin-top: 52px;
     font-size: 16px;
@@ -274,78 +427,80 @@ header .user_utils a svg {
     padding: 16px 50px;
     border-radius: 50px;
     transition: 0.3s;
-  }
-  
-  .recruitment .content a:hover {
-    color: var(--mc);
-  }
-  
-  /*  //recruitment */
+}
 
-  /* top 버튼 */
-  .top {
+.recruitment .content a:hover {
+    color: var(--mc);
+}
+
+/*  //recruitment */
+
+/* top 버튼 */
+.top {
     position: fixed;
     bottom: 40px;
     right: 40px;
-  }
-  
-  .top button {
+}
+
+.top button {
     width: 48px;
     height: 48px;
     background: #fff;
     border: 1px solid var(--hc);
     border-radius: 8px;
     font-size: 18px;
-    transition:  0.3s;
-  }
-  .top button:hover {
-    background-color: var(--mc);  
+    transition: 0.3s;
+}
+
+.top button:hover {
+    background-color: var(--mc);
     color: var(--bc);
     border-color: var(--mc);
-  }
-  /* //top */
+}
 
-  /* fotter */
-  footer{
+/* //top */
+
+/* fotter */
+footer {
     height: 130px;
     display: flex;
     align-items: center;
-  }
+}
 
-  footer .footer_section{
+footer .footer_section {
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+}
 
-  footer ul{
+footer ul {
     font-family: "Noto Sans KR", sans-serif;
     margin-top: var(--lh);
-    gap:16px;
+    gap: 16px;
     font-weight: bold;
     line-height: var(--lh);
     font-size: 14px;
-  }
-  footer p {
+}
+
+footer p {
     font-family: "Noto Sans KR", sans-serif;
     font-size: 14px;
     font-weight: var(--font-w-l);
     color: var(--hc);
     line-height: var(--lh);
-  }
+}
 
-  footer .brandslogo{
+footer .brandslogo {
     display: flex;
     gap: 16px;
-  }
-  
-footer .brand_hover{
+}
+
+footer .brand_hover {
     /* display: none; */
 }
 
-.brandslogo img{
+.brandslogo img {
     width: 32px;
     height: 32px;
 }
-
