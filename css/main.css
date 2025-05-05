@@ -223,8 +223,11 @@ header .user_utils a svg {
 .story_thumbs img{
     width: 100%;
 }
-.modal{
+#videomodal{
     display: none;
+}
+#videomodal.active{
+    display: block;
 }
 /* recruitment */
 

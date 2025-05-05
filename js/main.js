@@ -9,15 +9,16 @@
 
 
 /* jinuk */
-// carrer
-const stories = [
-  document.getElementById('story1'),
-  document.getElementById('story2'),
-  document.getElementById('story3')
-];
-
+const storyThumbs = document.querySelectorAll('.story_thumbs .thumb');
+const stories = document.querySelectorAll('.stories > div');
+const storyBtns = document.querySelectorAll('.stories button');
+const targetVideo = document.querySelector('#videomodal video');
+const videoModal = document.getElementById('videomodal');
 const leftBtn = document.querySelector('.left');
 const rightBtn = document.querySelector('.right');
+const thumbs = document.querySelector('.story_thumbs');
+const slides = thumbs.querySelectorAll('li');
+
 
 let currentIndex = 1; 
 
@@ -35,11 +36,8 @@ rightBtn.addEventListener('click', function () {
 leftBtn.addEventListener('click', function () {
   const prevIndex = (currentIndex - 1 + stories.length) % stories.length;
   active(prevIndex);
-});
+})
 
-const slideWrapper=document.querySelector('.story_wrapper');
-const thumbs = document.querySelector('.story_thumbs');
-const slides=thumbs.querySelectorAll('li');
 const slideWidth=313;
 const slideGap=20;
 
@@ -66,10 +64,22 @@ leftBtn.addEventListener('click',()=>{
 });
 
 
+storyThumbs.forEach((thumb, index) => {
+  thumb.addEventListener('click', (e) => {
+    e.preventDefault();
+    stories.forEach(story => story.classList.remove('active'));
+    stories[index].classList.add('active');
+  });
+});
 
 
-
-
+storyBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const videoURL = btn.getAttribute('data_url');
+    targetVideo.src = videoURL; 
+    videoModal.classList.add('active'); 
+  });
+});
 
 
 // top버튼
