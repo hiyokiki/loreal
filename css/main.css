@@ -123,7 +123,7 @@ header .user_utils a svg {
 
 /* careers */
 .careers{
-    margin-top: 69px;
+    margin-top: 130px;
 }
 .careers > div p{
     margin-bottom: 27px;
@@ -304,7 +304,6 @@ header .user_utils a svg {
 
   /* fotter */
   footer{
-    position: relative;
     height: 130px;
     display: flex;
     align-items: center;
@@ -339,7 +338,7 @@ header .user_utils a svg {
   }
   
 footer .brand_hover{
-    display: none;
+    /* display: none; */
 }
 
 .brandslogo img{
