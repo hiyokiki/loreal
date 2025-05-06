@@ -1,5 +1,4 @@
 
-
 /*youngate*/
 const chooseLang = document.querySelectorAll('.choose_lang li');
 const tapMenu = document.querySelectorAll('.tap_menu li');
@@ -57,20 +56,16 @@ for(item of tapMenu){
 
 
 /* jinuk */
-const storyThumbs = document.querySelectorAll('.story_thumbs .thumb');
-const stories = document.querySelectorAll('.stories > div');
-const storyBtns = document.querySelectorAll('.stories button');
-const targetVideo = document.querySelector('#videomodal video');
-const videoModal = document.getElementById('videomodal');
+
+
+/* careers */
+const stories = document.querySelectorAll('.story');
 const leftBtn = document.querySelector('.left');
 const rightBtn = document.querySelector('.right');
-const thumbs = document.querySelector('.story_thumbs');
-const slides = thumbs.querySelectorAll('li');
 
+let currentIndex = 1; 
 
-let currentIndex = 1;
-
-function active(index) {
+function updateActive(index) {
   stories.forEach(story => story.classList.remove('active'));
   stories[index].classList.add('active');
   currentIndex = index;
@@ -78,58 +73,73 @@ function active(index) {
 
 rightBtn.addEventListener('click', function () {
   const nextIndex = (currentIndex + 1) % stories.length;
-  active(nextIndex);
+  updateActive(nextIndex);
 });
 
 leftBtn.addEventListener('click', function () {
   const prevIndex = (currentIndex - 1 + stories.length) % stories.length;
-  active(prevIndex);
-})
+  updateActive(prevIndex);
+});
 
+
+
+
+const thumbsWrapper = document.querySelector('.story_thumbs'); // ul 부모가 overflow: hidden 되어 있어야 함
+const thumbs = document.querySelector('.story_thumbs'); // ul
+const slides = thumbs.querySelectorAll('li');
 const slideWidth = 313;
 const slideGap = 20;
 
 let thumbsIndex = 0;
 
 function moveSlide(idx) {
-  if (idx > slides.length - 3) {
+  const maxIndex = slides.length - 1;
+
+  if (idx > maxIndex) {
     idx = 0;
   }
   if (idx < 0) {
-    idx = slides.length - 3;
+    idx = maxIndex;
   }
+
   thumbs.style.left = -(idx * (slideWidth + slideGap)) + 'px';
-  currentIndex = idx;
-  console.log(thumbsIndex);
+  thumbsIndex = idx; 
+  console.log('thumbsIndex:', thumbsIndex);
 }
 
 rightBtn.addEventListener('click', () => {
-  moveSlide(++thumbsIndex);
+  moveSlide(thumbsIndex + 1);
 });
 
 leftBtn.addEventListener('click', () => {
-  moveSlide(--thumbsIndex);
+  moveSlide(thumbsIndex - 1);
 });
 
 
-storyThumbs.forEach((thumb, index) => {
-  thumb.addEventListener('click', (e) => {
-    e.preventDefault();
-    stories.forEach(story => story.classList.remove('active'));
-    stories[index].classList.add('active');
+const playBtn = document.querySelectorAll('.stories .play');
+const video = document.querySelector('#videomodal video');
+const videoModal = document.querySelector('#videomodal');
+const closeBtn = videoModal.querySelector('.close');
+
+for (const button of playBtn) {
+  button.addEventListener('click', function () {
+    const url = button.getAttribute('data_url');
+    if (url) {
+      video.src = url;
+      videoModal.classList.add('active');
+      video.play();
+    }
   });
+}
+
+closeBtn.addEventListener('click', function () {
+  video.pause();
+  video.currentTime = 0;
+  video.src = '';
+  videoModal.classList.remove('active');
 });
 
-
-storyBtns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const videoURL = btn.getAttribute('data_url');
-    targetVideo.src = videoURL;
-    videoModal.classList.add('active');
-  });
-});
-
-
+/* //careers */
 // top버튼
 const topButton = document.querySelector('.top button');
 

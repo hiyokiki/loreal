@@ -440,13 +440,18 @@ section.ESG {
 .careers .controls .right {
     margin-left: 635px;
 }
-
+.story_wrapper .container {
+    overflow: hidden; 
+  }
 .story_thumbs {
     margin-top: -119px;
     justify-content: center;
     align-items: center;
     gap: 20px;
     position: relative;
+    display: flex;
+    transition: left 0.3s ;
+    left: 0;
 }
 
 .story_thumbs li {
@@ -463,14 +468,32 @@ section.ESG {
     width: 100%;
 }
 
-#videomodal {
+.modal {
     display: none;
-}
-
-#videomodal.active {
-    display: block;
-}
-
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  
+  .modal.active {
+    display: flex;
+  }
+  
+  .modal_play {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+  }
+  
+  .modal_play button.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+  }
 /* recruitment */
 
 .recruitment {
@@ -540,6 +563,7 @@ section.ESG {
     border-radius: 8px;
     font-size: 18px;
     transition: 0.3s;
+
 }
 
 .top button:hover {
