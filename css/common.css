@@ -48,3 +48,13 @@ body{
     line-height: var(--lh);
     font-weight: var(--font-w-l);
 }
+
+.cta_btn{
+    width : 160px;
+    height : 60px;
+    line-height : 60px;
+    color : #fff;
+    border : 1px solid;
+    border-radius: 30px;
+    text-align: center;
+}
