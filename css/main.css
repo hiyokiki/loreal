@@ -142,9 +142,12 @@ section.brand {
 }
 
 .brand_item_wrap {
+    display: none;
     gap: 20px;
 }
-
+.brand_item_wrap.active{
+    display: flex;
+}
 .brand_item_wrap li.item {
     /* display: flex; */
     /* justify-content: center; */
