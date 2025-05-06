@@ -115,29 +115,23 @@ leftBtn.addEventListener('click', () => {
   moveSlide(thumbsIndex - 1);
 });
 
+const storyBtns = document.querySelectorAll('.stories button');
+const videoModal=document.querySelector('#videomodal');
+const videoTarget=videoModal.querySelector('video');
+const videoModalCloseBtn=videoModal.querySelector('.close');
 
-const playBtn = document.querySelectorAll('.stories .play');
-const video = document.querySelector('#videomodal video');
-const videoModal = document.querySelector('#videomodal');
-const closeBtn = videoModal.querySelector('.close');
-
-for (const button of playBtn) {
-  button.addEventListener('click', function () {
-    const url = button.getAttribute('data_url');
-    if (url) {
-      video.src = url;
-      videoModal.classList.add('active');
-      video.play();
-    }
-  });
+for(let btn of storyBtns){
+  btn.addEventListener('click',()=>{
+    let videoURL=btn.getAttribute('data-url');
+    videoTarget.setAttribute('src',videoURL);
+    videoTarget.setAttribute('autoplay','');
+    videoModal.classList.add('active');
+  })
 }
-
-closeBtn.addEventListener('click', function () {
-  video.pause();
-  video.currentTime = 0;
-  video.src = '';
+videoModalCloseBtn.addEventListener('click', ()=>{
   videoModal.classList.remove('active');
-});
+  videoTarget.setAttribute('src','');
+})
 
 /* //careers */
 // top버튼
