@@ -23,9 +23,10 @@ header .choose_lang {
     gap: 12px;
 }
 
-header .choose_lang li {}
-
-header .choose_lang li a {}
+header .choose_lang li.active a{
+    color : var(--mc);
+    font-weight: bold;
+}
 
 header .logo {
     width: 204px;
@@ -49,7 +50,12 @@ header .user_utils {
     gap: 10px;
 }
 
-header .user_utils a {}
+header .user_utils a:hover {
+    color: var(--mc);
+}
+header .user_utils a:hover svg path{
+    fill : var(--mc);
+}
 
 header .user_utils a svg {
     margin-left: 5px;
@@ -64,12 +70,15 @@ header nav {
 header .gnb {
     gap: 60px;
 }
-
 /* 임시 클래스 */
 .sub_menu {
     display: none;
+    position: absolute;
 }
 
+header .gnb li:hover .sub_menu{
+    display: block;
+}
 /* //header */
 
 /*  video banner */
@@ -88,10 +97,7 @@ header .gnb {
     height: 100%;
     object-fit: cover;
 }
-
 /* // video banner */
-
-
 
 /* brand */
 section.brand {
@@ -102,7 +108,6 @@ section.brand {
     margin-bottom: var(--lh);
     position: relative;
 }
-
 .title .tap_menu {
     display: flex;
     gap: 20px;
@@ -110,11 +115,9 @@ section.brand {
     right: 0;
     bottom: 0;
 }
-
 .title .tap_menu li:first-child {
     position: relative;
 }
-
 .title .tap_menu li:first-child::after {
     content: "";
     display: block;
@@ -126,64 +129,119 @@ section.brand {
     background-color: #999999;
 }
 
-.title .tap_menu li {}
-
-.title .tap_menu li a {}
+.title .tap_menu li.active {
+    color : var(--mc);
+    font-weight: bold;
+}
 
 .brand_item_wrap {
     gap: 20px;
 }
 
 .brand_item_wrap li.item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
     background-color: #f0f0f0;
     width: 315px;
     height: 442px;
+    overflow: hidden;
+    position: relative;
 }
-
-li.item .item_img {}
-
+li.item .item_img :first-child {
+    position: absolute;
+    top : 50%;
+    left : 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;
+}
 li.item .item_img :last-child {
-    display: none;
+    /* display: none; */
+    opacity: 0;
+    transition: 0.4s ease-out;
 }
-
 li.item .hover_info {
+    position: absolute;
+    left : 0;
+    right : 0;
+    top : 0;
+    bottom: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease-out;
+    background-color: rgba(255,255,2550,0.2);
+    color : #333;
+    opacity: 0;
+}
+li.item .hover_info h3{
+    font-size : 24px;
+    margin-bottom: 13px;
+}
+li.item .hover_info p{
+    line-height: 1.2;
+    text-align: center;
+}
+/* text hover를 어떻게 하면 좋을지 강사님에게 여쭤보기.. */
+li.item:hover .item_img :last-child {
+    opacity: 1;
+}
+li.item:hover .item_img :first-child {
+    opacity: 0;
+}
+/* 임시 속성 */
+.professional{
     display: none;
 }
-
 /* //brand */
 
 /* ESG  */
 section.ESG {
     margin-bottom: calc(var(--lh) * 5);
 }
-
 .ESG .slide_show {
     position: relative;
-    outline: 1px solid red;
     height: 598px;
     overflow: hidden;
     /*슬라이드 목록 안보이게*/
 }
-
-.ESG .slide_show .slide_container {
+.slide_show .slide_container {
     display: flex;
     width: 300%;
-    /* 추후 스크립트 제어 */
+    /* 추후 너비는 스크립트로 제어 */
 }
-
+.slide_show .btn_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: space-between;
+    z-index: 2;
+}
 .slide_container .slide {
     width: 100%;
     height: 598px;
-
     display: flex;
     flex-flow: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
-
+.slide::before{
+    content: "";
+    display: block;
+    top :0;
+    left : 0;
+    right : 0;
+    bottom : 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
 .slide_container .slide:nth-child(1) {
     background: url(../images/esg_banner_img01.jpg) no-repeat center center;
     background-size: cover;
@@ -197,19 +255,6 @@ section.ESG {
 .slide_container .slide:nth-child(3) {
     background: url(../images/esg_banner_img03.jpg) no-repeat center center;
     background-size: cover;
-}
-
-.slide_show .prev {
-    position: absolute;
-    top: 50%;
-    right: 300px;
-    transform: translateY(-50%);
-}
-
-.slide_show .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 /* //youngtae */
