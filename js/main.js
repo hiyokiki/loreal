@@ -84,8 +84,8 @@ leftBtn.addEventListener('click', function () {
 
 
 
-const thumbsWrapper = document.querySelector('.story_thumbs'); // ul 부모가 overflow: hidden 되어 있어야 함
-const thumbs = document.querySelector('.story_thumbs'); // ul
+const thumbsWrapper = document.querySelector('.story_thumbs'); 
+const thumbs = document.querySelector('.story_thumbs'); 
 const slides = thumbs.querySelectorAll('li');
 const slideWidth = 313;
 const slideGap = 20;

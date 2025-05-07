@@ -318,6 +318,19 @@ section.ESG {
     align-items: center;
     margin-top: 26px;
 }
+.news_list a{
+    display: block;
+    overflow: hidden;
+    width: 100%;
+}
+.news_list a img{
+    width: 100%;
+    height: 100%;
+    transition:.3s ease-in-out;
+}
+.news_list img:hover{
+    transform: scale(1.1);
+}
 
 .news ul li {
     line-height: var(--lh);
@@ -327,7 +340,9 @@ section.ESG {
     width: 427px;
     height: 390px;
 }
-
+.news_list p{
+    margin-top: var(--lh);
+}
 .news .more_link {
     position: absolute;
     right: 0;
