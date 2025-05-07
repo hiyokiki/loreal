@@ -128,10 +128,22 @@ for(let btn of storyBtns){
     videoModal.classList.add('active');
   })
 }
-videoModalCloseBtn.addEventListener('click', ()=>{
+videoModalCloseBtn.addEventListener('click', () => {
+  closeModal();
+});
+
+
+videoModal.addEventListener('click', (e) => {
+  if (e.target === videoModal) {
+    closeModal();
+  }
+});
+
+
+function closeModal() {
   videoModal.classList.remove('active');
-  videoTarget.setAttribute('src','');
-})
+  videoTarget.setAttribute('src', '');
+}
 
 /* //careers */
 // top버튼
