@@ -467,14 +467,21 @@ section.ESG {
     display: flex;
     transition: left 0.3s ;
     left: 0;
+    align-items: center;
 }
 
 .story_thumbs li {
     overflow: hidden;
     border-radius: 30px;
     box-shadow: 1px 1px 8px 0px rgba(0, 0, 0, 0.25);
+    flex:1;
+    transition:.3s ;
 }
-
+.story_thumbs li.active{
+    flex:1.3;
+    width: 427px;
+    height: 312px;
+}
 .story_thumbs a {
     display: block;
 }

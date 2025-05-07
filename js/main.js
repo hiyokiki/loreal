@@ -62,12 +62,23 @@ for(item of tapMenu){
 const stories = document.querySelectorAll('.story');
 const leftBtn = document.querySelector('.left');
 const rightBtn = document.querySelector('.right');
+const thumbsWrapper = document.querySelector('.story_thumbs'); 
+const thumbs = document.querySelector('.story_thumbs'); 
+const slides = thumbs.querySelectorAll('li');
+const slideWidth = 313;
+const slideGap = 20;
 
-let currentIndex = 1; 
+let thumbsIndex = 0;
+
+let currentIndex = 0; 
 
 function updateActive(index) {
   stories.forEach(story => story.classList.remove('active'));
   stories[index].classList.add('active');
+
+  slides.forEach(slide => slide.classList.remove('active'));
+  slides[index].classList.add('active');
+
   currentIndex = index;
 }
 
@@ -81,38 +92,17 @@ leftBtn.addEventListener('click', function () {
   updateActive(prevIndex);
 });
 
-
-
-
-const thumbsWrapper = document.querySelector('.story_thumbs'); 
-const thumbs = document.querySelector('.story_thumbs'); 
-const slides = thumbs.querySelectorAll('li');
-const slideWidth = 313;
-const slideGap = 20;
-
-let thumbsIndex = 0;
-
-function moveSlide(idx) {
-  const maxIndex = slides.length - 1;
-
-  if (idx > maxIndex) {
-    idx = 0;
-  }
-  if (idx < 0) {
-    idx = maxIndex;
-  }
-
-  thumbs.style.left = -(idx * (slideWidth + slideGap)) + 'px';
-  thumbsIndex = idx; 
-  console.log('thumbsIndex:', thumbsIndex);
-}
-
-rightBtn.addEventListener('click', () => {
-  moveSlide(thumbsIndex + 1);
+slides.forEach((slide, index) => {
+  slide.addEventListener('click', () => {
+    updateActive(index);
+  });
 });
 
-leftBtn.addEventListener('click', () => {
-  moveSlide(thumbsIndex - 1);
+
+slides.forEach(function(item) {
+  item.addEventListener('click', function(e) {
+    e.preventDefault();
+  });
 });
 
 const storyBtns = document.querySelectorAll('.stories button');
