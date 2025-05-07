@@ -97,7 +97,7 @@ slides.forEach((slide, index) => {
     updateActive(index);
   });
 });
-
+updateActive(0);
 
 slides.forEach(function(item) {
   item.addEventListener('click', function(e) {
