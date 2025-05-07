@@ -498,6 +498,7 @@ section.ESG {
     background: #fff;
     border-radius: 50%;
     border: 2px solid #000;
+    z-index: 999;
   }
 /* recruitment */
 
@@ -557,7 +558,7 @@ section.ESG {
 .top {
     position: fixed;
     bottom: 40px;
-    right: 40px;
+    right: 40px; 
 }
 
 .top button {
