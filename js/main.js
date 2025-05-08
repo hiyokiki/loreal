@@ -14,11 +14,7 @@ let showSlide = 0;
 const prevBtn = document.querySelector('#prev');
 const nextBtn = document.querySelector('#next');
 
-console.log(slideShow);
-console.log(slideContainer);
-console.log(slideItem);
-console.log(prevBtn);
-console.log(nextBtn);
+
 
 for(item of chooseLang){
   item.addEventListener('click',function(e){
@@ -66,7 +62,6 @@ for(item of tapMenu){
 // slideContainer.style.left = -200 + '%';
 nextBtn.addEventListener('click',function(){
   let nextIdx = (showSlide + 1)
-  console.log(nextIdx);
   slideContainer.style.left = -(nextIdx * 100) + '%';
   showSlide = nextIdx;
   if(showSlide == esgSlideLength -1){
@@ -79,7 +74,6 @@ nextBtn.addEventListener('click',function(){
 
 prevBtn.addEventListener('click',function(){
   let prevIdx = (showSlide - 1);
-  console.log(prevIdx);
   slideContainer.style.left = -(prevIdx * 100) + '%';
   showSlide = prevIdx;
   if(showSlide == 0){
@@ -89,10 +83,6 @@ prevBtn.addEventListener('click',function(){
     prevBtn.style.display = 'block';
   }
 });
-
-function moveSlide(){
-  
-}
 
 
 
