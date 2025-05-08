@@ -6,8 +6,21 @@ const tapMenu = document.querySelectorAll('.tap_menu li');
 const tapContent = document.querySelectorAll('.brand_item_wrap');
 const externalLink = document.querySelectorAll('.external_link');
 
-// console.log(chooseLang);
-// 언어 선택 버튼 클릭 시
+// slide
+const slideShow = document.querySelector('.slide_show');
+const slideContainer = document.querySelector('.slide_container');
+const slideItem = document.querySelectorAll('.slide_container .slide');  
+const esgSlideLength = slideItem.length;
+let showSlide = 0;
+const prevBtn = document.querySelector('#prev');
+const nextBtn = document.querySelector('#next');
+
+console.log(slideShow);
+console.log(slideContainer);
+console.log(slideItem);
+console.log(prevBtn);
+console.log(nextBtn);
+
 for(item of chooseLang){
   item.addEventListener('click',function(e){
     e.preventDefault();
@@ -18,16 +31,12 @@ for(item of chooseLang){
   });
 }
 
-// console.log(externalLink);
-// 외부링크 클릭시 a태그 이동 제거거
 for(item of externalLink){
   item.addEventListener('click',function(e){
     e.preventDefault();
   });
 }
 
-// console.log(tapMenu);
-// console.log(tapContent);
 for(item of tapMenu){
   item.addEventListener('click',function(e){
     // 기본 이동 막기
@@ -47,6 +56,59 @@ for(item of tapMenu){
     document.querySelector(targetID).classList.add('active');
   });
 }
+
+
+
+//버튼을 누르면 할 일
+//일단 한 칸 옮겨보자
+
+// slideContainer.style.left = 0 + '%';
+// slideContainer.style.left = 100 + '%';
+// slideContainer.style.left = -200 + '%';
+nextBtn.addEventListener('click',function(){
+  let nextIdx = (showSlide + 1)
+  console.log(nextIdx);
+  slideContainer.style.left = -(nextIdx * 100) + '%';
+  showSlide = nextIdx;
+  if(showSlide == esgSlideLength -1){
+    nextBtn.style.display = 'none';
+  }else{
+    nextBtn.style.display = 'block';
+    prevBtn.style.display = 'block';
+  }
+});
+
+prevBtn.addEventListener('click',function(){
+  let prevIdx = (showSlide - 1);
+  console.log(prevIdx);
+  slideContainer.style.left = -(prevIdx * 100) + '%';
+  showSlide = prevIdx;
+  if(showSlide == 0){
+    prevBtn.style.display = 'none';
+  }else{
+    nextBtn.style.display = 'block';
+    prevBtn.style.display = 'block';
+  }
+});
+
+function moveSlide(){
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
