@@ -230,7 +230,10 @@ section.ESG {
 .slide_show .slide_container {
     display: flex;
     width: 300%;
-    /* 추후 너비는 스크립트로 제어 */
+    /* js에서 left값을 제어하기 위해 부여 */
+    position: relative;
+    left : 0;
+    transition : all 0.3s;
 }
 
 .slide_show .btn_box {
@@ -241,7 +244,22 @@ section.ESG {
     justify-content: space-between;
     z-index: 2;
 }
-
+button span{
+    color : #fff;
+}
+.btn_box #prev{
+    position: absolute;
+    left : 0;
+    /* 초기값 부여 */
+    display: none;
+}
+.btn_box #next{
+    position: absolute;
+    right : 0;
+}
+button:hover span{
+    color : var(--mc);
+}
 .slide_container .slide {
     width: 100%;
     height: 598px;
@@ -252,7 +270,10 @@ section.ESG {
     position: relative;
     z-index: 1;
 }
-
+.cta_btn:hover{
+    color: var(--mc);
+    border-color: var(--mc);
+}
 .slide::before {
     content: "";
     display: block;
