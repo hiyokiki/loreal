@@ -17,7 +17,4 @@ HTML, CSS, JavaScript 기초 학습 직후 진행하여, **시맨틱 마크업**
 - JavaScript로 슬라이드 배너, 모달창, 간단한 애니메이션 구현
 - 제한된 인원으로 프로젝트를 완수하며 문제 해결 능력 및 책임감 강화
 
-## 실행 방법
-1. 이 저장소를 클론합니다.
-   ```bash
-   git clone https://github.com/hiyokiki/loreal.git
+
